@@ -1,11 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
 class Test(models.Model):
     name = models.CharField(max_length=200)
+    code = models.CharField(max_length=10, blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return str(self.id)
+
 
 class Position(models.Model):
     name = models.CharField(max_length=200)
@@ -15,5 +18,4 @@ class Position(models.Model):
     market_cap = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
-    
+        return str(self.name)
